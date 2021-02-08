@@ -15,7 +15,7 @@ Change your current directory to the new folder by typing:
 
 	cd [name_of_directory]
 
-	to enter the newly created folder. Using WinSCP, upload the runDLC and project files from your computer to your current directory by dragging and dropping the file.  
+to enter the newly created folder. Using WinSCP, upload the runDLC and project files from your computer to your current directory by dragging and dropping the file.  
 
 Unzip and run the contents of the folder. Since it is not permitted to run executables on the login nodes, we will also need to create an interactive development environment this can be done by typing:
 
@@ -24,7 +24,7 @@ Unzip and run the contents of the folder. Since it is not permitted to run execu
 		./init.sh
 		./container.sh
 
-	-L specifies that you will be interacting with the contents of the work directory. When running the application, also consider adding -m [number_of_minutes] to the idev line to specify how long before the system will return you back to the login node. The default is 30 minutes. (e.x if you plan to train the module for 10 hours, use -m 600)
+-L specifies that you will be interacting with the contents of the work directory. When running the application, also consider adding -m [number_of_minutes] to the idev line to specify how long before the system will return you back to the login node. The default is 30 minutes. (e.x if you plan to train the module for 10 hours, use -m 600)
 Another issue I ran into was not having permission to access the files. The workaround for this is to first run 
 		chmod 777 [name of file]
 This will grant you access to the file specified. 
@@ -42,7 +42,7 @@ The first step is creating a new project and labeling datasets on your local com
 
 DeepLabCut finds the project by following the path directory specified in the config file in your Project folder. Since you are changing computers, change the config file’s path to match your project directory on Maverick2 inside of the config.yaml file. Your current directory can be found by typing
 
-pwd
+		pwd
 
 Once this step is done, you are able to move the files to the same directory that your project is on and continue on from the Maverick2 computer through WinSCP. I would recommend zipping the file first to save time. From here, get back into the DLC container by running:
  		
