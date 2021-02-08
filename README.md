@@ -3,13 +3,15 @@ SSH client - I use PuTTY, it has a simple interface with all the features needed
 Recommended: WinSCP - A GUI for transferring files to Maverick2
 runDLC file
 
+WIP - By accessing this through TACC, you may be able run without needing to download anything.
+
 Installation and Accessing DeepLabCut:
 Log on the Maverick2 computer system with both PuTTY and WinSCP, and create a new folder for your project by typing:
 
 	cdw
 	mkdir [name_of_directory]
 
-  This will change directory to the work directory, and make directory with the specified name. The work directory is used because we will need to write into the directory, which is not able to be done in the home directory.
+This will change directory to the work directory, and make directory with the specified name. The work directory is used because we will need to write into the directory, which is not able to be done in the home directory.
 
 Change your current directory to the new folder by typing: 
 
