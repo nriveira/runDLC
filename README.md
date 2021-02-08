@@ -1,9 +1,6 @@
 Applications needed: 
 SSH client - I use PuTTY, it has a simple interface with all the features needed
 Recommended: WinSCP - A GUI for transferring files to Maverick2
-runDLC file
-
-WIP - By accessing this through TACC, you may be able run without needing to download anything.
 
 Installation and Accessing DeepLabCut:
 Log on the Maverick2 computer system with both PuTTY and WinSCP, and create a new folder for your project by typing:
@@ -12,26 +9,36 @@ Log on the Maverick2 computer system with both PuTTY and WinSCP, and create a ne
 	mkdir [name_of_directory]
 
 This will change directory to the work directory, and make directory with the specified name. The work directory is used because we will need to write into the directory, which is not able to be done in the home directory.
+To download the contents needed for DLC, type:
+
+	git clone https://github.com/nriveira/runDLC.git
 
 Change your current directory to the new folder by typing: 
 
-	cd [name_of_directory]
+	cd [name_of_created_directory]
 
-to enter the newly created folder. Using WinSCP, upload the runDLC and project files from your computer to your current directory by dragging and dropping the file.  
+to enter the folder that will contain all project contents. Using WinSCP, upload the project file from your computer to your current directory by dragging and dropping the file. 
+Next, move to the runDLC directory by running. 
 
-Unzip and run the contents of the folder. Since it is not permitted to run executables on the login nodes, we will also need to create an interactive development environment this can be done by typing:
+	cd runDLC
+	
+Note that you can go back in a directory by typing
+
+	cd ..
+
+Since it is not permitted to run executables on the login nodes, we will also need to create an interactive development environment. This can be done by typing:
 
 	idev -L work
-	unzip runDLCv2.zip
 	./init.sh
 	./container.sh
 
 -L specifies that you will be interacting with the contents of the work directory. When running the application, also consider adding -m [number_of_minutes] to the idev line to specify how long before the system will return you back to the login node. The default is 30 minutes. (e.x if you plan to train the module for 10 hours, use -m 600)
 Another issue I ran into was not having permission to access the files. The workaround for this is to first run 
-		chmod 777 [name of file]
-This will grant you access to the file specified. 
 
-This will bring up a shell running the DeepLabCut environment. To get back to this step when working on your project, run:
+	chmod 777 [name of file]
+
+This will grant you access to the file specified. 
+To get back to this step when working on your project, run:
 
 	./container.sh
 
