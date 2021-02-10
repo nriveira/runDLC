@@ -3,4 +3,3 @@ module load cudnn nccl
 module save
 
 singularity pull docker://nriveira/colginlab:latest
-pip install deeplabcut==2.2b7
