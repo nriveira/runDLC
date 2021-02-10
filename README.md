@@ -21,10 +21,10 @@ Change your current directory to the new folder by typing:
 	cd runDLC
 
 Using WinSCP, upload the project file from your computer to your current directory by dragging and dropping the file.
-You will need to move the local_modules folder from the runDLC file to the project file, using
+You will need to copy tthe local_modules folder from the runDLC file to the project file, using
 
 	<RAN IN runDLC FOLDER>
-	mv local_modules [path_to_project_directory]
+	cp -r local_modules [path_to_project_directory]
 	
 Note that you can go back in a directory by typing
 
