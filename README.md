@@ -19,16 +19,15 @@ This will import the folder runDLC, which has all of the contents to run DLC on 
 Change your current directory to the new folder by typing: 
 
 	cd runDLC
-
-Using WinSCP, upload the project file from your computer to your current directory by dragging and dropping the file.
-You will need to copy tthe local_modules folder from the runDLC file to the project file, using
-
-	<RAN IN runDLC FOLDER>
-	cp -r local_modules [path_to_project_directory]
 	
 Note that you can go back in a directory by typing
 
 	cd ..
+
+Using WinSCP, upload the project file from your computer to your current directory by dragging and dropping the file.
+BE SURE TO KEEP A BACKUP PROJECT FILE ON YOUR LOCAL COMPUTER SINCE DLC WILL OVERWRITE LOTS OF THINGS TO CONVERT TO UNIX
+I have had many issues with this if I mess up a step, but it can be reverted by reuploading the file and redoing the steps.
+
 
 Since it is not permitted to run executables on the login nodes, we will also need to create an interactive development environment. This can be done by typing:
 
