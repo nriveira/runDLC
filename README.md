@@ -1,4 +1,4 @@
-WORK IN PROGRESS
+STILL A WORK IN PROGRESS, BUT FUNCTIONAL
 
 Applications needed: 
 SSH client - I use PuTTY, it has a simple interface with all the features needed
