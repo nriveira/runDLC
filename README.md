@@ -1,3 +1,5 @@
+WORK IN PROGRESS
+
 Applications needed: 
 SSH client - I use PuTTY, it has a simple interface with all the features needed
 Recommended: WinSCP - A GUI for transferring files to Maverick2
