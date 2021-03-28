@@ -69,17 +69,16 @@ Once this step is done, you are able to move the files to the same directory tha
 
 Once inside of the container, run 
 
-	export DLClight=True
+	pip install deeplabcutcore
 	python3 runDLC.py <full file_path_to_config_file>
 
 This step will take several hours. It will tell display when a message every 1000 iterations and every 50,000 iterations will produce a more refined model that can be used. (Try and run for as many iterations as possible.) The runDLC.py program will create a training dataset and train the model. The model is now ready to be exported back to your computer to analyze videos. 
 
 You can also continue the analysis using TACC, this can be done in the interactive mode of python, found by running
 
-	export DLClight=True
 	ipython
-	import deeplabcut
-	deeplabcut.analyze_videos(config_path, [‘path of video 1’,‘path of video2’, ...])
+	import deeplabcutcore as deeplabcut
+	deeplabcut.analyze_videos(config_path, [‘path of video 1’,‘path of video2’, ...], videotype='.mp4',save_as_csv=True)
 	<ANY OTHER PYTHON LINES FOR DLC>
 	
 Hopefully this helps, and feel free to email me at nickriveira@utexas.edu for questions.
