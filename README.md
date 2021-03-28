@@ -1,4 +1,5 @@
 STILL A WORK IN PROGRESS, BUT FUNCTIONAL
+(The addition of deeplabcutcore greatly simplifies the process of running on TACC, so I am working on integrating that)
 
 Applications needed: 
 SSH client - I use PuTTY, it has a simple interface with all the features needed
