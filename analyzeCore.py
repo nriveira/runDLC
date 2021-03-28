@@ -1,8 +1,8 @@
 import deeplabcutcore as deeplabcut
 import tensorflow
 
-config = "C:\\Users\\nrive\\Research\\DLC-Models-Copy\\AnkGDLC-EnriqueV2\\config.yaml"
-vidPath = ["C:\\Users\\nrive\\Research\\AnkG\\Videos\\Mouse-3", "C:\\Users\\nrive\\Research\\AnkG\\Videos\\Mouse-4", "C:\\Users\\nrive\\Research\\AnkG\\Videos\\Mouse-5"]
+config = "/path/to/config.yaml"
+vidPath = ["path/to/first/folder","path/to/second/folder", "path/to/third/folder"]
 
 import os
 import sys
