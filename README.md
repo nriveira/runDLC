@@ -7,7 +7,7 @@ Recommended: WinSCP - A GUI for transferring files to Maverick2 (could also just
 Installation and Accessing DeepLabCut:
 Log on the Maverick2 computer system with both PuTTY [and WinSCP] and type:
 
-	cdw
+	cdw2
 
 This will change directory to the work directory, and make directory with the specified name. The work directory is used because we will need to write into the directory, which is not able to be done in the home directory. Feel free to make a project folder for all of the contents, which can be done using 
 
@@ -32,7 +32,7 @@ I have had many issues with this if I mess up a step, but it can be reverted by 
 
 Since it is not permitted to run executables on the login nodes, we will also need to create an interactive development environment. This can be done by typing:
 
-	idev -L work
+	idev -L work2
 	./init.sh
 	./container.sh
 
