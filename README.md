@@ -1,4 +1,4 @@
-FUNCTIONAL, and now includes deeplabcutcore to simplify graphics card hassle.
+FUNCTIONAL, but still a work in progress.
 
 Applications needed: 
 SSH client - I use PuTTY, it has a simple interface with all the features needed
@@ -9,7 +9,7 @@ Log on the Maverick2 computer system with both PuTTY [and WinSCP] and type:
 
 	cdw2
 
-This will change directory to the work directory, and make directory with the specified name. The work directory is used because we will need to write into the directory, which is not able to be done in the home directory. Feel free to make a project folder for all of the contents, which can be done using 
+This will change directory to the work2 directory, and make directory with the specified name. The work2 directory is used because we will need to write into the directory, which is not able to be done in the home directory. Feel free to make a project folder for all of the contents, which can be done using 
 
 	mkdir [name of directory]
 
@@ -41,9 +41,13 @@ Since it is not permitted to run executables on the login nodes, we will also ne
 	-m [number_of_minutes] 
 
 to the idev line to specify how long before the system will return you back to the login node. The default is 30 minutes. (e.x if you plan to train the module for 10 hours, use -m 600)
+
+*Due to long wait times, I have also included a sbatch script version that does not use idev, and will be at the bottom of this page.*
+
 Another issue I ran into was not having permission to access the files. The workaround for this is to first run 
 
 	chmod 770 [name of file]
+
 This will grant you execute permission for the file specified. https://en.wikipedia.org/wiki/Chmod has more details on the different permission settings you can use.
 To get back to this step when working on your project, run:
 
@@ -81,3 +85,6 @@ You can also continue the analysis using TACC, this can be done in the interacti
 	<ANY OTHER PYTHON LINES FOR DLC>
 	
 Hopefully this helps, and feel free to email me at nickriveira@utexas.edu for questions.
+
+Using the sbatch feature for automated runtime:
+*WIP*
