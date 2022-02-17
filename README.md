@@ -8,7 +8,7 @@ Integrating Maverick2 into DeepLabCut workflow
 Detailed instructions for running DLC “normally” can be found at https://github.com/DeepLabCut/DeepLabCut/blob/master/docs/UseOverviewGuide.md
 Here is an overview of the steps:
 
-The first step is creating a new project and labeling datasets on your local computer, as you would normally if you planned to create and train a dataset. Then, the project file is imported to TACC to create a training dataset and train the model. After, the project can be moved back to your local computer or left on TACC to analyze video. I find the video uploads to TACC to be somewhat slow, so there is a tradeoff between running DLC on your computer and spending time uploading lots of videos to TACC.
+The first step is creating a new project and labeling datasets on your local computer, as you would normally if you planned to create the model on your computer. Then, the project file is imported to TACC to create a training dataset and train the model. After, the project can be moved back to your local computer or left on TACC to analyze video. I find the video uploads to TACC to be somewhat slow, so there is a tradeoff between running DLC on your computer and spending time uploading lots of videos to TACC.
 
 Installation and Accessing DeepLabCut on TACC:
 Log on the Maverick2 computer system with both PuTTY [and WinSCP] and type:
@@ -21,7 +21,7 @@ This will change directory to the work2 directory. The work directory is used be
 
 Change your current directory to the new folder by typing: 
 
-	cd runDLC
+	cd [name of directory]
 	
 Note that you can go back in a directory by typing
 
@@ -59,6 +59,7 @@ Since it is not permitted to run executables on the login nodes, we will also ne
 
 to the idev line to specify how long before the system will return you back to the login node. The default is 30 minutes. (e.g. if you plan to train the module for 10 hours, use -m 600)
 
+./init should only be run once and is used to create the new DLC environment.	
 To get back to this step when working on your project, run:
 
 	./container.sh
@@ -69,8 +70,6 @@ An issue I ran into was not having permission to access the files. The workaroun
 	chmod 770 [name of file]
 
 This will grant you execute permission for the file specified. https://en.wikipedia.org/wiki/Chmod has more details on the different permission settings you can use.
- 		
-	./conatiner.sh
 
 Training the Model:
 Once inside of the container, run
@@ -78,7 +77,7 @@ Once inside of the container, run
 	export DLClight=True
 	python3 runDLC.py
 
-This step will take several hours. It creates a training dataset and starts training the models. Feel free to edit the python script as needed. By default, it will display a message every 1000 iterations and every 50,000 iterations will produce a more refined model that can be used. (Try and run for as many iterations as possible.) The model is now ready to be exported back to your computer to analyze videos. 
+This step will take several hours. It creates a training dataset and starts training the models. Feel free to edit the python script as needed. By default, it will display a message every 1000 iterations and every 50,000 iterations will save a more refined model that can be used. (Try and run for as many iterations as possible.) The model is now ready to be exported back to your computer to analyze videos. 
 
 Analyzing Video Using TACC:
 You can also continue the analysis using TACC, this can be done in the interactive mode of python, found by running
@@ -88,6 +87,7 @@ You can also continue the analysis using TACC, this can be done in the interacti
 	deeplabcut.analyze_videos(config_path, [‘path of video 1’,‘path of video2’, ...], videotype='.mp4',save_as_csv=True)
 	<ANY OTHER PYTHON LINES FOR DLC>
 
+When editing the python script, refer to https://github.com/DeepLabCut/DeepLabCut/blob/master/docs/standardDeepLabCut_UserGuide.md to include the correct functions (and in the correct order).
 To use the automated script, edit the runDLC.py file to include all of the commands you want to run. Remember to include 
 	
 	windows2linux=True
@@ -97,7 +97,5 @@ as a parameter to the create_training_dataset function to convert the project to
 	sbatch runDLC.slurm
 	
 There are other parameters inside of the slurm file, so feel free to run using different parameters as needed.
-	
 
-	
 Hopefully this helps, and feel free to email me at nickriveira@utexas.edu for questions.
